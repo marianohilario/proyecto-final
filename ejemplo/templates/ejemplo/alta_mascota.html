@@ -1,0 +1,15 @@
+{% extends 'ejemplo/base.html' %}
+{% block encabezado %}  Mi Pagina de Mascotas {% endblock %}
+{% block titulo %} Alta de nueva Mascota {% endblock %}
+{% block contenido %}
+  
+  <form action="/mascota/alta" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Cargar">
+  </form>
+
+  <h2 style="color:green">{{msg_exito}}</h2>
+
+  <a href="/mascota">Volver a lista de Mascotas</a>
+{% endblock %}

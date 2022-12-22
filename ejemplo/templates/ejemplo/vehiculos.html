@@ -1,9 +1,15 @@
 {% extends 'ejemplo/base.html' %}
-{% block titulo%} Lista de todos mis Familiares {% endblock %}
+{% block encabezado %}  Mi Pagina de Vehiculos {% endblock %}
+{% block titulo%} Lista de todos mis Vehiculos {% endblock %}
 {% block contenido %}
+    <a href="/vehiculo/alta">Nuevo Vehiculo</a>
     <ul>
         {% for vehiculo in lista_vehiculos %}
-            <li> Marca: {{vehiculo.marca}}, Modelo: {{vehiculo.modelo}} </li>
+            <li> 
+                Marca: {{vehiculo.marca}}, Modelo: {{vehiculo.modelo}}
+                <a href='actualizar/{{ vehiculo.id }}'>Actualizar</a>
+                <a href='borrar/{{ vehiculo.id }}'>Borrar</a> 
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}

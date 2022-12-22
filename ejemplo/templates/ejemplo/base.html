@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <h1> Mi Pagina de Familiares </h1>
+    <h1>{% block encabezado %}{% endblock %}</h1>
     <h2>{% block titulo %}{% endblock %}<h2>
-    {% block contenido %}{% endblock %}
+    <h4>{% block contenido %}{% endblock %}</h4>
 </body>
 
 </html>
